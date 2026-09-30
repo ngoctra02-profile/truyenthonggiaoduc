@@ -1,0 +1,489 @@
+:root {
+    --bg-color: #f8fafc;
+    --text-main: #1e293b;
+    --text-muted: #475569;
+    --primary: #0f766e; /* Teal */
+    --primary-hover: #115e59;
+    --gold: #d97706;
+    --gold-hover: #b45309;
+    --white: #ffffff;
+    --border: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    /* Soft pattern background to make the page look premium */
+    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 0;
+    letter-spacing: -1px;
+    color: #0f172a;
+}
+
+/* Pricing Section */
+.pricing-section {
+    padding: 20px 20px 80px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+.pricing-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.package-name {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.price {
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: baseline;
+    letter-spacing: -1px;
+    color: var(--text-main);
+}
+
+.price .currency {
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 6px;
+    color: var(--text-muted);
+}
+
+.billing-cycle {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.card-content {
+    flex-grow: 1;
+    margin-bottom: 30px;
+}
+
+.card-content p {
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-size: 16px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 6px;
+    color: var(--text-main);
+}
+
+.features {
+    list-style: none;
+}
+
+.features li {
+    font-size: 14.5px;
+    margin-bottom: 16px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.features li::before {
+    content: "•";
+    color: var(--primary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 18px;
+}
+
+.ordered-list {
+    list-style-type: decimal;
+    padding-left: 18px;
+    font-weight: 600; /* Make numbers bold */
+}
+.ordered-list > li {
+    padding-left: 4px;
+    color: var(--text-main);
+}
+.ordered-list > li::before {
+    content: none;
+}
+
+.sub-features {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+    font-weight: 400; /* Reset font weight for sub-items */
+}
+.sub-features li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding-left: 16px;
+}
+.sub-features li::before {
+    content: "→";
+    color: var(--text-muted);
+    font-size: 14px;
+    left: 0;
+}
+.sub-features li em {
+    color: var(--text-muted);
+}
+
+/* Button Base */
+.btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   GÓI 1: KHỞI ĐỘNG (Sạch sẽ, Chuyên nghiệp)
+   ========================================= */
+.basic {
+    border-top: 6px solid var(--primary);
+}
+.basic .package-name {
+    color: var(--primary);
+}
+.basic .price {
+    color: var(--primary);
+}
+.basic:hover {
+    border-top-width: 8px;
+}
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+.btn-outline:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* =========================================
+   GÓI 2: NUÔI DƯỠNG (Thu hút, Nổi bật)
+   ========================================= */
+.popular {
+    border: 3px solid var(--primary);
+    background: #e6f0ef; /* Phủ 1 lớp xanh ngọc trầm, nhẹ nhàng và nghiêm túc */
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: 0 30px 60px -15px rgba(15, 118, 110, 0.3);
+}
+.popular:hover {
+    transform: scale(1.05) translateY(-8px);
+}
+.popular .package-name {
+    color: #ea580c; /* Chữ màu cam */
+    font-size: 26px;
+}
+.popular .price {
+    color: #ea580c; /* Giá màu cam */
+}
+.popular-ribbon {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #f59e0b, #ef4444);
+    color: white;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+    white-space: nowrap;
+}
+.bonus-box {
+    background: linear-gradient(to right, rgba(217, 119, 6, 0.1), rgba(239, 68, 68, 0.05));
+    border: 2px dashed var(--gold);
+    padding: 16px;
+    border-radius: 12px;
+    margin-top: 24px;
+}
+.bonus-box p {
+    margin-bottom: 0;
+    font-size: 14.5px;
+    color: #b45309;
+}
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: 0 10px 15px -3px rgba(15, 118, 110, 0.4);
+}
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+/* =========================================
+   GÓI 3: BỨT PHÁ (VIP, Xa xỉ)
+   ========================================= */
+.vip {
+    background: linear-gradient(135deg, #0f172a 0%, #134e4a 100%); /* Xanh ngọc đậm (Dark Teal) */
+    border: none;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+/* Viền phát sáng màu vàng cho VIP */
+.vip::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 24px;
+    padding: 2px;
+    background: linear-gradient(45deg, #d97706, #fcd34d, #d97706);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+.vip .package-name {
+    background: linear-gradient(to right, #fcd34d, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 24px;
+}
+.vip .price { color: white; }
+.vip .price .currency { color: #fcd34d; }
+.vip .card-content p, .vip .billing-cycle { color: #f1f5f9; } /* Tăng độ sáng để chữ nổi bật hẳn trên nền tối */
+.vip .card-content p.section-title { 
+    color: #fcd34d; /* Đẩy Specificity lên để đè màu Vàng Gold vào tiêu đề */
+    border-color: #334155; 
+}
+.vip .features li, .vip .ordered-list > li { color: #f1f5f9; }
+.vip .features li::before { color: #fcd34d; }
+.vip .sub-features li::before { color: #94a3b8; }
+.vip .sub-features li em { color: #94a3b8; }
+
+.btn-gold {
+    background: linear-gradient(90deg, #d97706, #f59e0b);
+    color: #fff;
+    box-shadow: 0 10px 15px -3px rgba(217, 119, 6, 0.4);
+}
+.btn-gold:hover {
+    background: linear-gradient(90deg, #b45309, #d97706);
+}
+
+/* Acceptance Criteria */
+.acceptance-criteria {
+    margin-top: 60px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+.acceptance-criteria h3 {
+    color: var(--primary);
+    margin-bottom: 4px;
+    font-size: 24px;
+    font-weight: 800;
+}
+.acceptance-criteria .subtitle {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+.acceptance-criteria ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.acceptance-criteria ul li {
+    margin-bottom: 12px;
+    font-size: 16px;
+    padding-left: 28px;
+    position: relative;
+}
+.acceptance-criteria ul li::before {
+    content: "✓";
+    color: #10b981;
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 40px;
+    }
+    .popular {
+        transform: scale(1);
+    }
+    .popular:hover {
+        transform: translateY(-8px);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 16px 20px;
+    }
+    .hero h1 {
+        font-size: 30px;
+    }
+    .hero-subtitle {
+        font-size: 15px;
+    }
+    .pricing-card {
+        padding: 30px 20px;
+    }
+    .price {
+        font-size: 34px;
+    }
+    .modal-content {
+        padding: 30px 20px;
+    }
+    .phone-number {
+        font-size: 30px;
+    }
+    .acceptance-criteria {
+        padding: 24px;
+        margin-top: 40px;
+    }
+    .acceptance-criteria h3 {
+        font-size: 20px;
+    }
+}
+
+/* =========================================
+   MODAL (Cửa sổ thông tin liên hệ)
+   ========================================= */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: 40px 30px;
+    border-radius: 24px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    animation: modalFadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(30px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.2s ease;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #ef4444;
+}
+
+.modal-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.modal-content h3 {
+    color: var(--primary);
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.modal-content p {
+    font-size: 16px;
+    color: var(--text-main);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.phone-number {
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--gold);
+    margin: 8px 0;
+    letter-spacing: 1px;
+}
